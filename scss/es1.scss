@@ -1,0 +1,55 @@
+@import 'es.css';
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{ 
+    font: 14px sans-serif; 
+}
+
+#main-nav{
+
+
+    
+    img{
+        width: 25px;
+        height: auto;
+
+    }
+    ul{
+        font-size: 10px;
+        width:100%;
+        margin: 0;
+         background-color: blue;
+       
+        &:after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+    }
+    li:nth-child(4){
+        position: absolute;
+        right: 0;
+    }
+    li:nth-child(1){
+        left: 0;
+        height: 100%;
+        background-color: darken($color: blue, $amount: 3);
+        
+    }
+
+    li{
+        list-style-type: none;
+        float:left;
+        width: 14%;
+        
+    }
+    a{
+        text-decoration: none;
+        padding:16px;
+        display: block;
+        text-align: center;
+    }
+}
