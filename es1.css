@@ -1,0 +1,52 @@
+@import url(es.css);
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font: 14px sans-serif;
+  background: red;
+}
+
+#main-nav img {
+  width: 25px;
+  height: auto;
+}
+
+#main-nav ul {
+  font-size: 10px;
+  width: 100%;
+  margin: 0;
+  background-color: blue;
+}
+
+#main-nav ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#main-nav li:nth-child(4) {
+  position: absolute;
+  right: 0;
+}
+
+#main-nav li:nth-child(1) {
+  left: 0;
+  height: 100%;
+  background-color: #0000f0;
+}
+
+#main-nav li {
+  list-style-type: none;
+  float: left;
+  width: 14%;
+}
+
+#main-nav a {
+  text-decoration: none;
+  padding: 16px;
+  display: block;
+  text-align: center;
+}
