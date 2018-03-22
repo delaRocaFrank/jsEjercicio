@@ -17,7 +17,11 @@ gulp.task('sass',()=>{
 gulp.task('default',() =>{
     browserSync.init({
         proxy:"localhost/login",
+<<<<<<< HEAD
         port:8080
+=======
+        port:8000
+>>>>>>> 3d2e58b9e5bf2c4282561ad9ff00c74e2f2ef9c4
     })
     gulp.watch('./*.php').on('change',browserSync.reload);
     gulp.watch('./*.html').on('change',browserSync.reload);
