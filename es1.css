@@ -2,11 +2,7 @@
 * {
   padding: 0;
   margin: 0;
-}
-
-body {
-  font: 14px sans-serif;
-  background: red;
+  font: 17px sans-serif;
 }
 
 #main-nav img {
@@ -15,10 +11,9 @@ body {
 }
 
 #main-nav ul {
-  font-size: 10px;
   width: 100%;
-  margin: 0;
-  background-color: blue;
+  height: 60px;
+  background-color: rgba(37, 37, 206, 0.837);
 }
 
 #main-nav ul:after {
@@ -35,13 +30,20 @@ body {
 #main-nav li:nth-child(1) {
   left: 0;
   height: 100%;
-  background-color: #0000f0;
+}
+
+#main-nav li:hover {
+  background-color: rgba(34, 34, 189, 0.837);
 }
 
 #main-nav li {
+  font-size: 7px;
+  font-family: sans-serif;
   list-style-type: none;
+  position: static;
   float: left;
   width: 14%;
+  height: 60px;
 }
 
 #main-nav a {
