@@ -10,13 +10,18 @@
     </style>
 </head>
 <body>
-    <nav id="main-nav">
+    <nav id="main-nav" class="autofix">
         <div id="nav-wrap">
             <ul>
-            <li><a href=""><img src="./images/user-icon.png"></a></li>
-            <li><a href="">Añadir Placa</a></li>
-            <li><a href="">Eliminar Placa</a></li>
-            <li><a href="">Cerrar Sesión</a></li>
+            
+            <li id="inicio"><a href=""><img src="./images/home2.png"></a></li>
+            <li>
+                <a href="#">Placas</a>
+                <ul>
+                <a href=""><li>Añadir</li></a>
+                <a href=""><li>Eliminar</li></a>   
+                </ul>
+            <li id="cierre"><a href="" ><img src="./images/logout.png"></a></li>
             </ul>
         </div>
     </nav>

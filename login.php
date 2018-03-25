@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 							
                             
                             $_SESSION['username'] = $username;      
-                            header("location: welcome");
+                            header("location: inicio");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = 'Contraseña incorrecta.';
