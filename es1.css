@@ -9,7 +9,7 @@
   background-color: #2c2ce8;
 }
 
-#main-nav img {
+#main-nav img, #main-nav input {
   padding: 15%;
   position: relative;
   width: 30px;
@@ -78,7 +78,18 @@
   background-color: #1919e2;
 }
 
-#main-nav ul li a, #main-nav ul li h1 {
+#main-nav ul li a, #main-nav ul li h1, #main-nav ul li input {
   cursor: default;
   text-decoration: none;
+}
+
+#placa {
+  padding: 0;
+  text-align: center;
+}
+
+select {
+  color: darkblue;
+  border: 0px;
+  outline: none;
 }

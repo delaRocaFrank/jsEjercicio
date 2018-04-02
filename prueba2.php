@@ -49,3 +49,17 @@ foreach($dom->getElementsByTagName('h6') as $link) {
 echo($_POST["tPlaca"]." ".$_POST["placa"]);
 //mail("delarocafrank@gmail.com","Multas","Prueba\n Exito","From:AvisoMultas");
 ?>
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="es.css">
+    <style type="text/css">
+        }
+    </style>
+</head>
+	<body>
+
+	</body>
+</html>

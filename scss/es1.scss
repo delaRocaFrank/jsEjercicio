@@ -12,7 +12,7 @@ $color: rgb(44, 44, 232);
 #main-nav{
     background-color: $color;  
 
-    img{
+    img,input {
         padding: 15%;
         position: relative;
         width: 30px;
@@ -43,7 +43,6 @@ $color: rgb(44, 44, 232);
     
     li:hover>ul{
         display: block;   
-         
     }
 
     
@@ -81,7 +80,7 @@ $color: rgb(44, 44, 232);
             }
             
         }
-        a, h1{
+        a, h1,input{
             cursor: default;
             text-decoration: none;
             
@@ -90,4 +89,15 @@ $color: rgb(44, 44, 232);
         
     }
 } 
+}
+//fin main-nav
+#placa{
+    padding: 0;
+    text-align: center;
+}
+
+select{
+    color: darkblue;
+    border: 0px;
+    outline: none;
 }
