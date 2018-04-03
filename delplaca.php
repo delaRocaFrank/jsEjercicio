@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(empty($_SESSION['username'])){
+    header("location:login");
+}else{
+    echo $_SESSION['username'];
+}
+
+
+
+?>
+
 <html>
 <title>Placa</title>
 <link rel="stylesheet" href="es1.css">
@@ -8,12 +20,12 @@
             
             <li id="inicio"><a href="inicio"><img src="./images/home2.png"></a></li>
             <li>
-                <a href="#">Placas</a>
+                <a href="inicio">Placas</a>
                 <ul>
                 <a href="addplaca"><li>Añadir</li></a>
                 <a href="delplaca"><li>Eliminar</li></a>   
                 </ul>
-            <li id="cierre"><a href="" ><img src="./images/logout.png"></a></li>
+            <li id="cierre"><a href="logout" ><img src="./images/logout.png"></a></li>
             </ul>
         </div>
     </nav>
