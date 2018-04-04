@@ -102,13 +102,13 @@ input.form-control:active{
 
 
 #usuario{
-    background-image: url('user-icon.png');
+    background-image: url('./images/user-icon.png');
     background-size: auto 70%;
     background-position: 1px 5px; 
     background-repeat: no-repeat;
 }
 #contraseña{
-    background-image: url('password-icon.png');
+    background-image: url('./images/password-icon.png');
     background-position: 4px 4px; 
     background-repeat: no-repeat;
     background-size: auto 70%;
