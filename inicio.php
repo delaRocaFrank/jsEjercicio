@@ -2,8 +2,6 @@
 session_start();
 if(empty($_SESSION['username'])){
     header("location:login");
-}else{
-    echo $_SESSION['username'];
 }
 
 
@@ -27,14 +25,32 @@ if(empty($_SESSION['username'])){
         <div id="nav-wrap">
             <ul>
             
-            <li id="inicio"><a href=""><img src="./images/home2.png"></a></li>
+            <li id="inicio"><a href="">
+                <img src="./images/home2.png"></a>
+            </li>
+            
             <li>
                 <a href="#">Placas</a>
                 <ul>
                 <a href="addplaca"><li>Añadir</li></a>
                 <a href="delplaca"><li>Eliminar</li></a>   
                 </ul>
-            <li id="cierre"><a href="logout" ><img src="./images/logout.png"></a></li>
+            </li>
+                
+            <li id="cierre">
+                <a href="#" >
+                <?php
+                     $name=explode("@",$_SESSION['username']);
+
+                     echo ($name[0]);
+                ?>
+                </a>
+                <ul>
+                <a href=""><li>Ajustes</li></a>
+                <a href="logout"><li>Salir</li></a>
+                </ul>
+            </li>
+            
             </ul>
         </div>
     </nav>

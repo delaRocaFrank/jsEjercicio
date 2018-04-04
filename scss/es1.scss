@@ -11,6 +11,8 @@ $color: rgb(44, 44, 232);
 
 #main-nav{
     background-color: $color;  
+    position:relative ;
+    top: 0;
 
     img,input {
         padding: 15%;
