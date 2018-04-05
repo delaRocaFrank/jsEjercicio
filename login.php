@@ -131,7 +131,6 @@ function checkLoginState() {
                 value="<?php echo $username; ?>"
                 required
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                title="Direccion de correo incorrecta."
                 >
                 <span class="help-block"><?php echo $username_err; ?></span>    
             </div>    

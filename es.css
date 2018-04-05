@@ -7,14 +7,14 @@ h1{
     color:darkblue;
    }
 h2{
-    font: bold 14px verdana, sans-serif;
+    font: bold 20px verdana, sans-serif;
     color:darkblue;
    } 
 
 
 p{
     font: sans-serif;
-    font-size: 10px;
+    font-size: 15px;
     color: blue;
 }
 
@@ -29,10 +29,10 @@ footer{
 }
 
 a{
-    color:lightgreen;
+    color:darkgreen;
 }
 a:visited{
-    color: lightgreen;
+    color: green;
     font: bold;
 }
 
@@ -42,7 +42,7 @@ span{
     clear: none;
     font: bold 6px;
     color:blue;
-    font-size: 7px;
+    font-size: 15px;
 
 }
 span:hover{
@@ -86,7 +86,10 @@ input.form-control{
     border:none;
     border-bottom: 1px groove rgba(0,0,0,0.19);
     padding-left: 40px;
-    size: 300px 300px;
+    font-size: 16px;
+    height: auto;
+    width: 250px;
+
 }
 input.form-control:hover{
     border-bottom: 2px solid rgb(57, 145, 60); 

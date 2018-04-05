@@ -2,8 +2,6 @@
 session_start();
 if(empty($_SESSION['username'])){
     header("location:login");
-}else{
-    echo $_SESSION['username'];
 }
 
 
@@ -11,23 +9,14 @@ if(empty($_SESSION['username'])){
 ?>
 <html>
 <title>Placa</title>
+<head>
 <link rel="stylesheet" href="es1.css">
+<?php 
+    include('header.html');
+?>
+</head>
 <body>
-    <nav id="main-nav" class="autofix">
-        <div id="nav-wrap">
-            <ul>
-            
-            <li id="inicio"><a href="inicio"><img src="./images/home2.png"></a></li>
-            <li>
-                <a href="#">Placas</a>
-                <ul>
-                <a href="addplaca"><li>Añadir</li></a>
-                <a href="delplaca"><li>Eliminar</li></a>   
-                </ul>
-            <li id="cierre"><a href="logout" ><img src="./images/logout.png"></a></li>
-            </ul>
-        </div>
-    </nav>
+    
 
     <div class="wrapper">
         <form class="form-horizontal tasi-form" id="signupForm" action="prueba2" method="POST">
