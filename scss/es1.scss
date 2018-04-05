@@ -109,3 +109,27 @@ select{
     border: 0px;
     outline: none;
 }
+
+table{
+    border: solid 1px violet;
+    width: 100%;
+    
+    th{
+        border-bottom: solid 1px darken(violet,5);
+        color: white;
+    }
+    tr:nth-child(odd){
+        background-color: lighten(violet, 8);
+    }
+    tr:nth-child(1){
+        position: -webkit-sticky;
+        position: sticky;
+        background-color: black;
+        &:after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+    }
+
+}

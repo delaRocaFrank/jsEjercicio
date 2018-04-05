@@ -101,3 +101,29 @@ select {
   border: 0px;
   outline: none;
 }
+
+table {
+  border: solid 1px violet;
+  width: 100%;
+}
+
+table th {
+  border-bottom: solid 1px #eb6ceb;
+  color: white;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f3a6f3;
+}
+
+table tr:nth-child(1) {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: black;
+}
+
+table tr:nth-child(1):after {
+  content: "";
+  display: block;
+  clear: both;
+}
