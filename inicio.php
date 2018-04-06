@@ -25,7 +25,7 @@ if(empty($_SESSION['username'])){
 </head>
 <body> 
 
-    <div>
+    <div id="sticky">
     <table>
     <tr>
     <th> Placa </th>

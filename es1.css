@@ -1,13 +1,17 @@
 @import url(es.css);
 * {
+  overflow: inherit;
   padding: 0;
   margin: 0;
   font: 17px sans-serif;
 }
 
 #main-nav {
+  top: 0px;
+  position: -webkit-sticky;
+  position: sticky;
   background-color: #2c2ce8;
-  border-top: solid 1px #2c2ce8;
+  z-index: 5;
 }
 
 #main-nav img, #main-nav input {
@@ -72,8 +76,10 @@
 
 #main-nav ul li ul li {
   background-color: #2c2ce8;
-  float: none;
+  float: initial;
   display: block;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 #main-nav ul li li:last-child {
@@ -105,25 +111,19 @@ select {
 table {
   border: solid 1px violet;
   width: 100%;
+  overflow: scroll;
 }
 
 table th {
+  background-color: black;
+  top: 60px;
+  position: -webkit-sticky;
+  position: sticky;
   border-bottom: solid 1px #eb6ceb;
   color: white;
+  z-index: 0;
 }
 
 table tr:nth-child(odd) {
   background-color: #f3a6f3;
-}
-
-table tr:nth-child(1) {
-  position: -webkit-sticky;
-  position: sticky;
-  background-color: black;
-}
-
-table tr:nth-child(1):after {
-  content: "";
-  display: block;
-  clear: both;
 }
