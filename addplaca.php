@@ -19,7 +19,7 @@ if(empty($_SESSION['username'])){
     
 
     <div class="wrapper">
-        <form class="form-horizontal tasi-form" id="signupForm" action="prueba2" method="POST">
+        <form class="form-horizontal tasi-form" id="signupForm" action="addplaca-form" method="POST">
             <div class="form-group">
                         <div>
                             <h2>Tipo de Vehículo</h2>
