@@ -2,9 +2,8 @@
 # Use the Curl extension to query Google and get back a page of results
 
 
-$url = "https://consultas.munimixco.gob.gt/vista/emixtra.php?tPlaca=".$_POST["tPlaca"]."&placa=".$_POST["placa"];
-//$url = "https://consultas.munimixco.gob.gt/vista/emixtra.php?tPlaca=P&placa=068GSX";
-//$url = "localhost:8080/test";
+$url = "https://consultas.munimixco.gob.gt/vista/emixtra.php?tPlaca=".$tplaca."&placa=".$placa;
+
 
 $ch = curl_init();
 $timeout = 5;
@@ -41,11 +40,11 @@ foreach($dom->getElementsByTagName('h6') as $link) {
 				
 		}	
 	
-        
+  
 		
 		}
 	$flag+=1;
-}
+}      
 echo($_POST["tPlaca"]." ".$_POST["placa"]);
 //mail("delarocafrank@gmail.com","Multas","Prueba\n Exito","From:AvisoMultas");
 ?>

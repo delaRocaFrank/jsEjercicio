@@ -10,6 +10,7 @@ $color: rgb(44, 44, 232);
 }
 
 
+
 #main-nav{
     top: 0px;
     position: sticky;
@@ -131,7 +132,7 @@ table{
         z-index: 0;
     }
     tr:nth-child(odd){
-        background-color: lighten(violet, 8);
+        background-color: lightblue;
     }
 
 

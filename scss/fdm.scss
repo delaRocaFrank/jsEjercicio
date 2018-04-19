@@ -1,0 +1,90 @@
+*{
+padding: o;
+margin: 0;
+}
+body{
+    background-color: palevioletred;
+}
+
+
+.wraper{
+color: lightslategrey;
+position: absolute;
+
+transition: all 0.6 ease;
+transform-style: preserve-3d;
+}
+
+
+#div1{
+    top: 20%;
+    left: 20%;
+}
+#div2{
+    top: 30%;
+    left: 40%;
+}
+#div3{
+    top: 40%;
+    left: 50%;
+}
+#div4{
+    top: 50%;
+    left: 60%;
+}
+//tamaño de P
+$x:50px;
+p{
+    position: relative;
+    float: left;    
+    background-color: white;
+    text-align: center;    
+    font-size: $x*0.8;
+    height: $x;
+    width: $x;
+    line-height:$x;
+}
+$degrees:20deg;
+#div1:hover{
+    p{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
+        0 6px 20px 0 rgba(0,0,0,0.19);
+}
+    p:nth-child(odd){
+        transform: rotateZ(-$degrees)
+                   scale(1.1);
+        
+    }
+    p:nth-child(even){
+        transform: rotateZ($degrees)
+                    scale(.9);
+    }
+}
+#div2:hover{
+    p{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
+        0 6px 20px 0 rgba(0,0,0,0.19);
+}
+    p:nth-child(odd){
+        transform: perspective(4);
+        
+    }
+    p:nth-child(even){
+        border: solid 2px lightcoral;
+    }
+}
+#div4:hover{
+    p{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
+        0 6px 20px 0 rgba(0,0,0,0.19);
+}
+    p:nth-child(odd){
+        transform: skew(0deg,-15deg)
+                    scale(1.1);
+        
+    }
+    p:nth-child(even){
+        transform: skew(0deg,15deg)
+                    scale(1.01);
+    }
+}

@@ -1,0 +1,88 @@
+* {
+  padding: o;
+  margin: 0;
+}
+
+body {
+  background-color: palevioletred;
+}
+
+.wraper {
+  color: lightslategrey;
+  position: absolute;
+  transition: all 0.6 ease;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+#div1 {
+  top: 20%;
+  left: 20%;
+}
+
+#div2 {
+  top: 30%;
+  left: 40%;
+}
+
+#div3 {
+  top: 40%;
+  left: 50%;
+}
+
+#div4 {
+  top: 50%;
+  left: 60%;
+}
+
+p {
+  position: relative;
+  float: left;
+  background-color: white;
+  text-align: center;
+  font-size: 40px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+}
+
+#div1:hover p {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#div1:hover p:nth-child(odd) {
+  -webkit-transform: rotateZ(-20deg) scale(1.1);
+          transform: rotateZ(-20deg) scale(1.1);
+}
+
+#div1:hover p:nth-child(even) {
+  -webkit-transform: rotateZ(20deg) scale(0.9);
+          transform: rotateZ(20deg) scale(0.9);
+}
+
+#div2:hover p {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#div2:hover p:nth-child(odd) {
+  -webkit-transform: perspective(4);
+          transform: perspective(4);
+}
+
+#div2:hover p:nth-child(even) {
+  border: solid 2px lightcoral;
+}
+
+#div4:hover p {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#div4:hover p:nth-child(odd) {
+  -webkit-transform: skew(0deg, -15deg) scale(1.1);
+          transform: skew(0deg, -15deg) scale(1.1);
+}
+
+#div4:hover p:nth-child(even) {
+  -webkit-transform: skew(0deg, 15deg) scale(1.01);
+          transform: skew(0deg, 15deg) scale(1.01);
+}

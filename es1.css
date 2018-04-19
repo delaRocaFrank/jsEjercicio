@@ -125,5 +125,5 @@ table th {
 }
 
 table tr:nth-child(odd) {
-  background-color: #f3a6f3;
+  background-color: lightblue;
 }
