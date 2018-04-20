@@ -5,11 +5,12 @@ user-select: none;
 }
 body{
     background-color: palevioletred;
+    overflow: hidden;
 }
 
 
 .wraper{
-color: lightslategrey;
+
 position: absolute;
 
 transition: 0.6s;
@@ -50,6 +51,7 @@ transform-style: preserve-3d;
 //tamaño de P
 $x:80px;
 p{
+    color: lightslategrey;
     position: relative;
     float: left;    
     background-color: white;
@@ -135,5 +137,181 @@ $degrees:20deg;
         transform: skewY(-15deg)
         scale(1.01);
         color: lighten(lightslategrey, 6);
+    }
+}
+$esfera: 180px;
+$radio:180px;
+.att{
+    z-index: 2;
+    background-color:white;
+    height: $esfera;
+    width: $esfera;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    -webkit-border-bottom-right-radius: $radio;
+    -webkit-border-bottom-left-radius: $radio;
+    -moz-border-radius-bottomright: $radio;
+    -moz-border-radius-bottomleft: $radio;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    -webkit-border-top-right-radius:$radio;
+    -webkit-border-top-left-radius: $radio;
+    -moz-border-radius-topright: $radio;
+    -moz-border-radius-topleft: $radio;
+    border-top-right-radius: 0;
+    border-top-left-radius: $radio;
+    
+    box-shadow: 0 12px 32px 0 rgba(0,0,0,0.5);
+    transition: 2s;
+    p{
+        position: relative;
+        display: inline;
+        bottom: -30%;
+        left: 40%;
+        transform: rotate(-45deg);
+        transition:0.6s;
+    }
+
+}
+
+.attcontainer:hover{
+    .att{
+    transform: rotate(90deg);
+    transform-origin: 100% 100%;
+       
+    
+    }
+    .att2{
+        box-shadow: none;
+    
+    }
+}
+
+
+
+.att2{
+    z-index: 1;
+    background-color:white;
+    height: $esfera;
+    width: $esfera;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    -webkit-border-bottom-right-radius: $radio;
+    -webkit-border-bottom-left-radius: $radio;
+    -moz-border-radius-bottomright: $radio;
+    -moz-border-radius-bottomleft: $radio;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    -webkit-border-top-right-radius:$radio;
+    -webkit-border-top-left-radius: $radio;
+    -moz-border-radius-topright: $radio;
+    -moz-border-radius-topleft: $radio;
+    border-top-right-radius: 0;
+    border-top-left-radius: $radio;
+    box-shadow: inset 2px 1px 12px 0px rgba(0,0,0,0.5);
+    transition: 0.6s;
+    p{
+
+        position: relative;
+        display: inline;
+        bottom: -50%;
+        left: 20%;
+        transform: rotate(-45deg)
+        scale(0.8);
+
+    }
+
+}
+$radiocloud:120px;
+
+.cloud{
+    position: absolute;
+    float: left;
+    left: 0%;
+    top:-3%;
+    
+    background-color:white;
+    -webkit-border-bottom-right-radius: $radiocloud;
+    -webkit-border-bottom-left-radius: $radiocloud;
+    -moz-border-radius-bottomright: $radiocloud;
+    -moz-border-radius-bottomleft: $radiocloud;
+    border-bottom-right-radius: $radiocloud;
+    border-bottom-left-radius: $radiocloud;
+    -webkit-border-top-right-radius:$radiocloud;
+    -webkit-border-top-left-radius: $radiocloud;
+    -moz-border-radius-topright: $radiocloud;
+    -moz-border-radius-topleft: $radiocloud;
+    border-top-right-radius: $radiocloud;
+    border-top-left-radius: $radiocloud;
+}
+
+.cloudcontainer{
+    .cloud:nth-child(odd){
+        height: $radiocloud*1.5;
+        width: $radiocloud*1.5;
+    }
+    .cloud:nth-child(even){
+        height: $radiocloud*1.4;
+        width: $radiocloud*1.4;
+    }
+    $diferencia: 7%;
+    .cloud:nth-child(1){
+        left: -5%;
+    }
+    .cloud:nth-child(2){
+        left:0%+$diferencia;
+    }
+    .cloud:nth-child(3){
+        left:10%+$diferencia;
+    }
+    .cloud:nth-child(4){
+        left:17%+$diferencia;
+    }
+    .cloud:nth-child(5){
+        left:23%+$diferencia;
+    }
+    .cloud:nth-child(6){
+        left:30%+$diferencia;
+    }
+    .cloud:nth-child(7){
+        left:35%+$diferencia;
+        height: $radiocloud ;
+        width: $radiocloud  ;
+    }
+}
+.cloudcontainer2{
+    .cloud:nth-child(odd){
+        height: $radiocloud*1.5;
+        width: $radiocloud*1.5;
+    }
+    .cloud:nth-child(even){
+        height: $radiocloud*1.4;
+        width: $radiocloud*1.4;
+    }
+    $diferencia: 7%;
+    .cloud:nth-child(1){
+        right: -5%;
+    }
+    .cloud:nth-child(2){
+        right:0%+$diferencia;
+    }
+    .cloud:nth-child(3){
+        right:10%+$diferencia;
+    }
+    .cloud:nth-child(4){
+        right:17%+$diferencia;
+    }
+    .cloud:nth-child(5){
+        right:23%+$diferencia;
+    }
+    .cloud:nth-child(6){
+        right:30%+$diferencia;
+    }
+    .cloud:nth-child(7){
+        right:35%+$diferencia;
+        height: $radiocloud ;
+        width: $radiocloud  ;
     }
 }
