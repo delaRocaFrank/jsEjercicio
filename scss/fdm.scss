@@ -1,6 +1,7 @@
 *{
 padding: o;
 margin: 0;
+user-select: none; 
 }
 body{
     background-color: palevioletred;
@@ -11,29 +12,43 @@ body{
 color: lightslategrey;
 position: absolute;
 
-transition: all 0.6 ease;
+transition: 0.6s;
 transform-style: preserve-3d;
 }
 
 
 #div1{
     top: 20%;
-    left: 20%;
+    left: 5%;
 }
 #div2{
     top: 30%;
-    left: 40%;
+    left: 45%;
 }
 #div3{
     top: 40%;
-    left: 50%;
+    left: 20%;
+    p{
+        z-index: 1;
+    }
+    p:nth-child(n+3){
+        position: absolute;
+        left:80px;
+        z-index: 0;
+    }
+    
+
 }
 #div4{
     top: 50%;
-    left: 60%;
+    left: 40%;
+}
+#div5{
+    top: 65%;
+    left: 50%;
 }
 //tamaño de P
-$x:50px;
+$x:80px;
 p{
     position: relative;
     float: left;    
@@ -43,6 +58,8 @@ p{
     height: $x;
     width: $x;
     line-height:$x;
+    display: table-cell;
+    transition: 0.6s;
 }
 $degrees:20deg;
 #div1:hover{
@@ -57,7 +74,7 @@ $degrees:20deg;
     }
     p:nth-child(even){
         transform: rotateZ($degrees)
-                    scale(.9);
+                    scale(1.1);
     }
 }
 #div2:hover{
@@ -66,25 +83,57 @@ $degrees:20deg;
         0 6px 20px 0 rgba(0,0,0,0.19);
 }
     p:nth-child(odd){
-        transform: perspective(4);
+        transform: translate($x,0);
         
     }
-    p:nth-child(even){
-        border: solid 2px lightcoral;
-    }
+   
 }
-#div4:hover{
+
+#div3:hover{
     p{
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
         0 6px 20px 0 rgba(0,0,0,0.19);
 }
+    p:nth-child(1){
+        transform: translate($x,0);
+        box-shadow: none;
+        
+    }
+    p:nth-child(3){
+        transform: translate(0,-$x);
+    }
+    
+    p:nth-child(4){
+        transform: translate(-$x*3);
+    }
+    p:nth-child(5){
+        transform: translate(-$x*2);
+    }
+    p:nth-child(6){
+        transform: translate(-$x);
+    }
+    p:nth-child(7){
+        transform: translate($x);
+    }
+    p:nth-child(8){
+        transform: translate($x*2);
+    }
+}
+
+#div5:hover{
+    p{
+        box-shadow: 0 32px 64px 0 rgba(0,0,0,0.5),
+        inset 0 6px 20px 0 rgba(0,0,0,0.19);
+}
     p:nth-child(odd){
-        transform: skew(0deg,-15deg)
-                    scale(1.1);
+        transform: skewY(15deg)
+        scale(1.01);
+        color: darken(lightslategrey, 4);
         
     }
     p:nth-child(even){
-        transform: skew(0deg,15deg)
-                    scale(1.01);
+        transform: skewY(-15deg)
+        scale(1.01);
+        color: lighten(lightslategrey, 6);
     }
 }

@@ -1,6 +1,10 @@
 * {
   padding: o;
   margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body {
@@ -10,29 +14,44 @@ body {
 .wraper {
   color: lightslategrey;
   position: absolute;
-  transition: all 0.6 ease;
+  transition: 0.6s;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
 #div1 {
   top: 20%;
-  left: 20%;
+  left: 5%;
 }
 
 #div2 {
   top: 30%;
-  left: 40%;
+  left: 45%;
 }
 
 #div3 {
   top: 40%;
-  left: 50%;
+  left: 20%;
+}
+
+#div3 p {
+  z-index: 1;
+}
+
+#div3 p:nth-child(n+3) {
+  position: absolute;
+  left: 80px;
+  z-index: 0;
 }
 
 #div4 {
   top: 50%;
-  left: 60%;
+  left: 40%;
+}
+
+#div5 {
+  top: 65%;
+  left: 50%;
 }
 
 p {
@@ -40,10 +59,12 @@ p {
   float: left;
   background-color: white;
   text-align: center;
-  font-size: 40px;
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
+  font-size: 64px;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  display: table-cell;
+  transition: 0.6s;
 }
 
 #div1:hover p {
@@ -56,8 +77,8 @@ p {
 }
 
 #div1:hover p:nth-child(even) {
-  -webkit-transform: rotateZ(20deg) scale(0.9);
-          transform: rotateZ(20deg) scale(0.9);
+  -webkit-transform: rotateZ(20deg) scale(1.1);
+          transform: rotateZ(20deg) scale(1.1);
 }
 
 #div2:hover p {
@@ -65,24 +86,62 @@ p {
 }
 
 #div2:hover p:nth-child(odd) {
-  -webkit-transform: perspective(4);
-          transform: perspective(4);
+  -webkit-transform: translate(80px, 0);
+          transform: translate(80px, 0);
 }
 
-#div2:hover p:nth-child(even) {
-  border: solid 2px lightcoral;
-}
-
-#div4:hover p {
+#div3:hover p {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#div4:hover p:nth-child(odd) {
-  -webkit-transform: skew(0deg, -15deg) scale(1.1);
-          transform: skew(0deg, -15deg) scale(1.1);
+#div3:hover p:nth-child(1) {
+  -webkit-transform: translate(80px, 0);
+          transform: translate(80px, 0);
+  box-shadow: none;
 }
 
-#div4:hover p:nth-child(even) {
-  -webkit-transform: skew(0deg, 15deg) scale(1.01);
-          transform: skew(0deg, 15deg) scale(1.01);
+#div3:hover p:nth-child(3) {
+  -webkit-transform: translate(0, -80px);
+          transform: translate(0, -80px);
+}
+
+#div3:hover p:nth-child(4) {
+  -webkit-transform: translate(-240px);
+          transform: translate(-240px);
+}
+
+#div3:hover p:nth-child(5) {
+  -webkit-transform: translate(-160px);
+          transform: translate(-160px);
+}
+
+#div3:hover p:nth-child(6) {
+  -webkit-transform: translate(-80px);
+          transform: translate(-80px);
+}
+
+#div3:hover p:nth-child(7) {
+  -webkit-transform: translate(80px);
+          transform: translate(80px);
+}
+
+#div3:hover p:nth-child(8) {
+  -webkit-transform: translate(160px);
+          transform: translate(160px);
+}
+
+#div5:hover p {
+  box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.5), inset 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#div5:hover p:nth-child(odd) {
+  -webkit-transform: skewY(15deg) scale(1.01);
+          transform: skewY(15deg) scale(1.01);
+  color: #6c7e90;
+}
+
+#div5:hover p:nth-child(even) {
+  -webkit-transform: skewY(-15deg) scale(1.01);
+          transform: skewY(-15deg) scale(1.01);
+  color: #8897a6;
 }
