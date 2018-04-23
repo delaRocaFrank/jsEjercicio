@@ -6,6 +6,7 @@ user-select: none;
 body{
     background-color: palevioletred;
     overflow: hidden;
+    animation: dianoche 10s infinite;
 }
 
 
@@ -227,10 +228,10 @@ $radio:180px;
 $radiocloud:120px;
 
 .cloud{
-    position: absolute;
-    float: left;
-    left: 0%;
+    position: fixed;
     top:-3%;
+    box-shadow: inset 2px -7px 5px 0 rgba(0,0,0,0.1);
+    
     
     background-color:white;
     -webkit-border-bottom-right-radius: $radiocloud;
@@ -245,9 +246,34 @@ $radiocloud:120px;
     -moz-border-radius-topleft: $radiocloud;
     border-top-right-radius: $radiocloud;
     border-top-left-radius: $radiocloud;
+    &:after{
+        content:none;
+        display: block;
+        clear: both;
+        }
+   
+    
+}
+.header{    
+    position: absolute;
+    
+    top:0%;
+    right: 0%;
+    width: 100%;
+    height: $radiocloud;
+    border: solid 1px white;
 }
 
 .cloudcontainer{
+    height: $radiocloud;
+    width: 50%;
+    float: left;
+
+    .cloud{
+        
+    animation: clouds1 2s infinite;
+    }
+
     .cloud:nth-child(odd){
         height: $radiocloud*1.5;
         width: $radiocloud*1.5;
@@ -276,12 +302,20 @@ $radiocloud:120px;
         left:30%+$diferencia;
     }
     .cloud:nth-child(7){
-        left:35%+$diferencia;
+        left:37%+$diferencia;
         height: $radiocloud ;
         width: $radiocloud  ;
     }
 }
 .cloudcontainer2{
+    width: 49%;
+    height: $radiocloud;
+    float: right;
+
+    .cloud{
+        animation: clouds2 2s infinite;
+    }
+    
     .cloud:nth-child(odd){
         height: $radiocloud*1.5;
         width: $radiocloud*1.5;
@@ -310,8 +344,150 @@ $radiocloud:120px;
         right:30%+$diferencia;
     }
     .cloud:nth-child(7){
-        right:35%+$diferencia;
+        right:37%+$diferencia;
         height: $radiocloud ;
         width: $radiocloud  ;
+    }
+    &:after{
+        content: none;
+        display: block;
+        clear: both;
+    }
+}
+
+$distancia:20px;
+@keyframes clouds1{
+    0%{
+        transform: translateY(0px)
+        rotate(0deg);
+    }
+    50%{
+        transform: translateY($distancia)
+        rotateX(360deg);
+        box-shadow: inset 2px -7px 5px 0 rgba(0,0,0,0.1),
+        0 6px 20px 0 rgba(0,0,0,0.19);
+        
+    }
+    100%{
+        transform: translateY(0px)
+        rotate(0deg);
+    }
+
+}
+
+@keyframes clouds2{
+    0%{
+        transform: translateY($distancia);
+        
+        box-shadow: inset 2px -7px 5px 0 rgba(0,0,0,0.1),
+        0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    50%{
+        transform: translateY(0px);
+        box-shadow: inset 2px -7px 5px 0 rgba(0,0,0,0.1);
+        
+    }
+    100%{
+        transform: translateY($distancia);
+        
+        box-shadow: inset 2px -7px 5px 0 rgba(0,0,0,0.1),
+        0 6px 20px 0 rgba(0,0,0,0.19);
+        
+    }
+
+}
+ $radiocloud:600px;
+.sun{
+    position: absolute;
+    background-color: yellow;
+    top:-500px;
+    right:-100px;
+    width: $radiocloud;
+    height: $radiocloud;
+   
+    animation: sol 10s infinite;
+
+    -webkit-border-bottom-right-radius: $radiocloud;
+    -webkit-border-bottom-left-radius: $radiocloud;
+    -moz-border-radius-bottomright: $radiocloud;
+    -moz-border-radius-bottomleft: $radiocloud;
+    border-bottom-right-radius: $radiocloud;
+    border-bottom-left-radius: $radiocloud;
+    -webkit-border-top-right-radius:$radiocloud;
+    -webkit-border-top-left-radius: $radiocloud;
+    -moz-border-radius-topright: $radiocloud;
+    -moz-border-radius-topleft: $radiocloud;
+    border-top-right-radius: $radiocloud;
+    border-top-left-radius: $radiocloud;
+ 
+}
+
+@keyframes sol{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(150px);
+        box-shadow:  0px 0px 600px 200px rgba(255, 255, 0, 0.593);
+   
+    
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+$radiocloud:400px;
+.moon{
+    position: absolute;
+    background-color: white;
+    top:-500px;
+    left:-100px;
+    width: $radiocloud;
+    height: $radiocloud;
+   
+    animation: luna 10s infinite;
+
+    -webkit-border-bottom-right-radius: $radiocloud;
+    -webkit-border-bottom-left-radius: $radiocloud;
+    -moz-border-radius-bottomright: $radiocloud;
+    -moz-border-radius-bottomleft: $radiocloud;
+    border-bottom-right-radius: $radiocloud;
+    border-bottom-left-radius: $radiocloud;
+    -webkit-border-top-right-radius:$radiocloud;
+    -webkit-border-top-left-radius: $radiocloud;
+    -moz-border-radius-topright: $radiocloud;
+    -moz-border-radius-topleft: $radiocloud;
+    border-top-right-radius: $radiocloud;
+    border-top-left-radius: $radiocloud;
+ 
+}
+$shadow: 0px 0px 600px 500px rgba(255, 255, 255, 0.858);
+@keyframes luna{
+    0%{
+        transform: translateY(350px);
+        box-shadow: $shadow;
+    }
+    50%{
+        transform: translateY(0px);
+        box-shadow: none;
+    
+    }
+    100%{
+        transform: translateY(350px);
+        box-shadow:  $shadow;
+    }
+}
+@keyframes dianoche{
+    0%{
+        background-color: navy;
+    }
+    50%{
+        background-color: palevioletred;
+    
+    }
+    100%{
+        background-color: navy;    
     }
 }
