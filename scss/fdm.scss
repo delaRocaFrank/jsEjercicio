@@ -2,12 +2,14 @@
 padding: o;
 margin: 0;
 user-select: none; 
+
 }
+
 body{
     background-color: palevioletred;
     overflow: hidden;
     animation: dianoche 10s infinite;
-}
+  }
 
 
 .wraper{
@@ -148,8 +150,8 @@ $radio:180px;
     height: $esfera;
     width: $esfera;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 0%;
+    bottom: 0%;
     -webkit-border-bottom-right-radius: $radio;
     -webkit-border-bottom-left-radius: $radio;
     -moz-border-radius-bottomright: $radio;
@@ -231,7 +233,7 @@ $radiocloud:120px;
     position: fixed;
     top:-3%;
     box-shadow: inset 2px -7px 5px 0 rgba(0,0,0,0.1);
-    
+    will-change: auto;
     
     background-color:white;
     -webkit-border-bottom-right-radius: $radiocloud;
@@ -270,8 +272,8 @@ $radiocloud:120px;
     float: left;
 
     .cloud{
-        
-    animation: clouds1 2s infinite;
+        z-index: 0;
+        animation: clouds1 2s infinite;
     }
 
     .cloud:nth-child(odd){
@@ -313,6 +315,7 @@ $radiocloud:120px;
     float: right;
 
     .cloud{
+        z-index: 2;
         animation: clouds2 2s infinite;
     }
     
@@ -398,13 +401,14 @@ $distancia:20px;
 }
  $radiocloud:600px;
 .sun{
+    z-index: 1;
     position: absolute;
     background-color: yellow;
     top:-500px;
-    right:-100px;
+    right:0px;
     width: $radiocloud;
     height: $radiocloud;
-   
+    will-change: transform, box-shadow;
     animation: sol 10s infinite;
 
     -webkit-border-bottom-right-radius: $radiocloud;
@@ -424,29 +428,30 @@ $distancia:20px;
 
 @keyframes sol{
     0%{
-        transform: translateY(0px);
+        -webkit-transform: translate3d(0px , 0px);
     }
     50%{
-        transform: translateY(150px);
-        box-shadow:  0px 0px 600px 200px rgba(255, 255, 0, 0.593);
+        -webkit-transform: translate3d(0px , 200px, 0);
+        box-shadow:  0px 0px 100px 50px rgba(255, 255, 0, 0.282);
    
     
     }
     100%{
-        transform: translateY(0px);
+        -webkit-transform: translate3d(0px , 0px);
     }
 }
 
 
 $radiocloud:400px;
 .moon{
+    z-index: 0;
     position: absolute;
     background-color: white;
     top:-500px;
     left:-100px;
     width: $radiocloud;
     height: $radiocloud;
-   
+    will-change: transform, box-shadow;
     animation: luna 10s infinite;
 
     -webkit-border-bottom-right-radius: $radiocloud;
@@ -463,31 +468,37 @@ $radiocloud:400px;
     border-top-left-radius: $radiocloud;
  
 }
-$shadow: 0px 0px 600px 500px rgba(255, 255, 255, 0.858);
+$shadow: 0px 0px 100px 50px rgba(255, 255, 255, 0.72);
 @keyframes luna{
     0%{
-        transform: translateY(350px);
+        -webkit-transform: translate3d(0 , 300px, 0);
         box-shadow: $shadow;
     }
     50%{
-        transform: translateY(0px);
+        -webkit-transform: translate3d(0 , 0, 0);
         box-shadow: none;
     
     }
     100%{
-        transform: translateY(350px);
+        -webkit-transform: translate3d(0 , 300px, 0);
         box-shadow:  $shadow;
     }
 }
+
+
+
 @keyframes dianoche{
     0%{
         background-color: navy;
+        background-image: url("./images/fondo.png");    
     }
     50%{
-        background-color: palevioletred;
+        background-color:palevioletred;
+        
     
     }
     100%{
-        background-color: navy;    
+        background-color: navy;
+        background-image: url("./images/fondo.png");        
     }
 }

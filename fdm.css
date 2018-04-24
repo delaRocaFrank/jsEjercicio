@@ -155,8 +155,8 @@ p {
   height: 180px;
   width: 180px;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 0%;
+  bottom: 0%;
   -webkit-border-bottom-right-radius: 180px;
   -webkit-border-bottom-left-radius: 180px;
   -moz-border-radius-bottomright: 180px;
@@ -231,6 +231,7 @@ p {
   position: fixed;
   top: -3%;
   box-shadow: inset 2px -7px 5px 0 rgba(0, 0, 0, 0.1);
+  will-change: auto;
   background-color: white;
   -webkit-border-bottom-right-radius: 120px;
   -webkit-border-bottom-left-radius: 120px;
@@ -268,6 +269,7 @@ p {
 }
 
 .cloudcontainer .cloud {
+  z-index: 0;
   -webkit-animation: clouds1 2s infinite;
           animation: clouds1 2s infinite;
 }
@@ -319,6 +321,7 @@ p {
 }
 
 .cloudcontainer2 .cloud {
+  z-index: 2;
   -webkit-animation: clouds2 2s infinite;
           animation: clouds2 2s infinite;
 }
@@ -438,12 +441,14 @@ p {
 }
 
 .sun {
+  z-index: 1;
   position: absolute;
   background-color: yellow;
   top: -500px;
-  right: -100px;
+  right: 0px;
   width: 600px;
   height: 600px;
+  will-change: transform, box-shadow;
   -webkit-animation: sol 10s infinite;
           animation: sol 10s infinite;
   -webkit-border-bottom-right-radius: 600px;
@@ -462,43 +467,39 @@ p {
 
 @-webkit-keyframes sol {
   0% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translate3d(0px, 0px);
   }
   50% {
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
-    box-shadow: 0px 0px 600px 200px rgba(255, 255, 0, 0.593);
+    -webkit-transform: translate3d(0px, 200px, 0);
+    box-shadow: 0px 0px 100px 50px rgba(255, 255, 0, 0.282);
   }
   100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translate3d(0px, 0px);
   }
 }
 
 @keyframes sol {
   0% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translate3d(0px, 0px);
   }
   50% {
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
-    box-shadow: 0px 0px 600px 200px rgba(255, 255, 0, 0.593);
+    -webkit-transform: translate3d(0px, 200px, 0);
+    box-shadow: 0px 0px 100px 50px rgba(255, 255, 0, 0.282);
   }
   100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translate3d(0px, 0px);
   }
 }
 
 .moon {
+  z-index: 0;
   position: absolute;
   background-color: white;
   top: -500px;
   left: -100px;
   width: 400px;
   height: 400px;
+  will-change: transform, box-shadow;
   -webkit-animation: luna 10s infinite;
           animation: luna 10s infinite;
   -webkit-border-bottom-right-radius: 400px;
@@ -517,60 +518,58 @@ p {
 
 @-webkit-keyframes luna {
   0% {
-    -webkit-transform: translateY(350px);
-            transform: translateY(350px);
-    box-shadow: 0px 0px 600px 500px rgba(255, 255, 255, 0.858);
+    -webkit-transform: translate3d(0, 300px, 0);
+    box-shadow: 0px 0px 100px 50px rgba(255, 255, 255, 0.72);
   }
   50% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translate3d(0, 0, 0);
     box-shadow: none;
   }
   100% {
-    -webkit-transform: translateY(350px);
-            transform: translateY(350px);
-    box-shadow: 0px 0px 600px 500px rgba(255, 255, 255, 0.858);
+    -webkit-transform: translate3d(0, 300px, 0);
+    box-shadow: 0px 0px 100px 50px rgba(255, 255, 255, 0.72);
   }
 }
 
 @keyframes luna {
   0% {
-    -webkit-transform: translateY(350px);
-            transform: translateY(350px);
-    box-shadow: 0px 0px 600px 500px rgba(255, 255, 255, 0.858);
+    -webkit-transform: translate3d(0, 300px, 0);
+    box-shadow: 0px 0px 100px 50px rgba(255, 255, 255, 0.72);
   }
   50% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translate3d(0, 0, 0);
     box-shadow: none;
   }
   100% {
-    -webkit-transform: translateY(350px);
-            transform: translateY(350px);
-    box-shadow: 0px 0px 600px 500px rgba(255, 255, 255, 0.858);
+    -webkit-transform: translate3d(0, 300px, 0);
+    box-shadow: 0px 0px 100px 50px rgba(255, 255, 255, 0.72);
   }
 }
 
 @-webkit-keyframes dianoche {
   0% {
     background-color: navy;
+    background-image: url("./images/fondo.png");
   }
   50% {
     background-color: palevioletred;
   }
   100% {
     background-color: navy;
+    background-image: url("./images/fondo.png");
   }
 }
 
 @keyframes dianoche {
   0% {
     background-color: navy;
+    background-image: url("./images/fondo.png");
   }
   50% {
     background-color: palevioletred;
   }
   100% {
     background-color: navy;
+    background-image: url("./images/fondo.png");
   }
 }
