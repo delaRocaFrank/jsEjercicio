@@ -1,21 +1,24 @@
 *{
-padding: o;
+padding: 0;
 margin: 0;
 user-select: none; 
 
 }
 
-body{
+.starfield{
     background-color: palevioletred;
-    overflow: hidden;
+    
     animation: dianoche 10s infinite;
   }
 
+body{
+overflow: hidden;
+}
 
 .wraper{
 
 position: absolute;
-
+float: left;
 transition: 0.6s;
 transform-style: preserve-3d;
 }
@@ -65,7 +68,26 @@ p{
     line-height:$x;
     display: table-cell;
     transition: 0.6s;
+    transform-style: preserve-3d;
 }
+.clock{
+    z-index: 2;
+    $x: $x/2;
+    float: left;    
+    background-color: transparent;
+    color: red; 
+    font-size: $x*0.8;
+    height: $x;
+    width: max-content;
+    line-height:$x;
+    transition: 1s;
+    transform-style: preserve-3d;
+    margin: 3px;
+    
+    
+}
+
+
 $degrees:20deg;
 #div1:hover{
     p{
@@ -84,13 +106,12 @@ $degrees:20deg;
 }
 #div2:hover{
     p{
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
-        0 6px 20px 0 rgba(0,0,0,0.19);
-}
-    p:nth-child(odd){
-        transform: translate($x,0);
-        
+        transform: 10s;
+        transform-style: preserve-3d;
+        perspective: 700;
+        transform: rotateX(6*360deg);
     }
+        
    
 }
 
@@ -180,7 +201,9 @@ $radio:180px;
 
 .attcontainer:hover{
     .att{
-    transform: rotate(90deg);
+    transform: rotateY(-90deg);
+    transform-style: preserve-3d;
+    perspective: 8880;
     transform-origin: 100% 100%;
        
     
@@ -501,4 +524,123 @@ $shadow: 0px 0px 100px 50px rgba(255, 255, 255, 0.72);
         background-color: navy;
         background-image: url("./images/fondo.png");        
     }
+}
+
+$colorgradiente1: #ffffff;
+$colorgradiente2: #f06598;
+$tamañofondo:100px;
+
+.borde{
+    $tamañodiv: 100%;
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width: $tamañodiv;
+    height:$tamañodiv;
+    background: linear-gradient(-45deg,
+                                $colorgradiente1 0%,
+                                $colorgradiente1 25%,
+                                $colorgradiente2 25%,
+                                $colorgradiente2 50%,
+                                $colorgradiente1 50%,
+                                $colorgradiente1 75%,
+                                $colorgradiente2 75%,
+                                $colorgradiente2 100%);
+    
+    
+    background-size: $tamañofondo $tamañofondo;
+    animation: animate 2s linear infinite;
+
+ 
+    
+}
+$borde:25px;
+.inside{
+    position: absolute;
+    top: $borde;
+    bottom: $borde;
+    left: $borde;
+    right: $borde;
+    background: lighten(moccasin, 11);
+
+    border: 0.8px solid lightgray;
+
+    $borderradio:25px;
+    -webkit-border-bottom-right-radius: $borderradio;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-bottom-right-radius: $borderradio;
+    border-bottom-left-radius: $borderradio;
+    -webkit-border-top-right-radius:$borderradio;
+    -webkit-border-top-left-radius: $borderradio;
+    -moz-border-radius-topright: $borderradio;
+    -moz-border-radius-topleft: $borderradio;
+    border-top-right-radius: $borderradio;
+    border-top-left-radius: $borderradio;
+
+    box-shadow:  0px 0px 7px 5px rgba(0, 0, 0, 0.11);
+
+}  
+
+@keyframes animate{
+    0%{
+        background-position: 0px;
+    }
+
+   100%{
+        background-position: $tamañofondo;
+    }
+}
+
+.corazon {
+    z-index: 3;
+    background-color: red;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 10px;
+    transform: rotate(-45deg);
+    width: 30px;
+    transition: 1s;
+    transform-style: preserve-3d;
+  }
+  
+  .corazon:before,
+  .corazon:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+  }
+  
+  .corazon:before {
+    top: -15px;
+    left: 0;
+  }
+  
+  .corazon:after {
+    left: 15px;
+    top: 0;
+  }
+
+#segundos{
+    position: relative;
+    top: -10px;
+    left: 10px;
+    margin: 0;
+    background: none;
+    font-size: 15px;
+    color: white;
+    transform: scale(0.50%);
+    transform: rotate(45deg);
+}
+
+#reloj{
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
 }

@@ -1,5 +1,5 @@
 * {
-  padding: o;
+  padding: 0;
   margin: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -7,15 +7,19 @@
           user-select: none;
 }
 
-body {
+.starfield {
   background-color: palevioletred;
-  overflow: hidden;
   -webkit-animation: dianoche 10s infinite;
           animation: dianoche 10s infinite;
 }
 
+body {
+  overflow: hidden;
+}
+
 .wraper {
   position: absolute;
+  float: left;
   transition: 0.6s;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -68,6 +72,25 @@ p {
   line-height: 80px;
   display: table-cell;
   transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.clock {
+  z-index: 2;
+  float: left;
+  background-color: transparent;
+  color: red;
+  font-size: 32px;
+  height: 40px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  line-height: 40px;
+  transition: 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  margin: 3px;
 }
 
 #div1:hover p {
@@ -85,12 +108,14 @@ p {
 }
 
 #div2:hover p {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#div2:hover p:nth-child(odd) {
-  -webkit-transform: translate(80px, 0);
-          transform: translate(80px, 0);
+  -webkit-transform: 10s;
+          transform: 10s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 700;
+          perspective: 700;
+  -webkit-transform: rotateX(2160deg);
+          transform: rotateX(2160deg);
 }
 
 #div3:hover p {
@@ -184,8 +209,12 @@ p {
 }
 
 .attcontainer:hover .att {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 8880;
+          perspective: 8880;
   -webkit-transform-origin: 100% 100%;
           transform-origin: 100% 100%;
 }
@@ -572,4 +601,113 @@ p {
     background-color: navy;
     background-image: url("./images/fondo.png");
   }
+}
+
+.borde {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #ffffff 0%, #ffffff 25%, #f06598 25%, #f06598 50%, #ffffff 50%, #ffffff 75%, #f06598 75%, #f06598 100%);
+  background-size: 100px 100px;
+  -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;
+}
+
+.inside {
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+  background: #fff8ed;
+  border: 0.8px solid lightgray;
+  -webkit-border-bottom-right-radius: 25px;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  -webkit-border-top-right-radius: 25px;
+  -webkit-border-top-left-radius: 25px;
+  -moz-border-radius-topright: 25px;
+  -moz-border-radius-topleft: 25px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.11);
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 100px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 100px;
+  }
+}
+
+.corazon {
+  z-index: 3;
+  background-color: red;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 10px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 30px;
+  transition: 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.corazon:before,
+.corazon:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.corazon:before {
+  top: -15px;
+  left: 0;
+}
+
+.corazon:after {
+  left: 15px;
+  top: 0;
+}
+
+#segundos {
+  position: relative;
+  top: -10px;
+  left: 10px;
+  margin: 0;
+  background: none;
+  font-size: 15px;
+  color: white;
+  -webkit-transform: scale(0.5%);
+          transform: scale(0.5%);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#reloj {
+  position: absolute;
+  bottom: 35px;
+  left: 35px;
 }

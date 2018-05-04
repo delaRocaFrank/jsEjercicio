@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+$colorgradiente1: #ffffff;
+$colorgradiente2: #f06598;
+$tamañofondo:40px;
+.borde{
+    $tamañodiv: 500px;
+    position: absolute;
+    top: 252px;
+    right:0px;
+    width: $tamañodiv;
+    height:$tamañodiv;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(-45deg,
+                                $colorgradiente1 0%,
+                                $colorgradiente1 25%,
+                                $colorgradiente2 25%,
+                                $colorgradiente2 50%,
+                                $colorgradiente1 50%,
+                                $colorgradiente1 75%,
+                                $colorgradiente2 75%,
+                                $colorgradiente2 100%);
+    
+    
+    background-size: $tamañofondo , $tamañofondo*.5;
+    animation: animate 2s linear infinite;
+    
+}
+$borde:15px;
+.borde div{
+    position: absolute;
+    top: $borde;
+    bottom: $borde;
+    left: $borde;
+    right: $borde;
+    background: #fff;
+}  
+
+@keyframes animate{
+    0%{
+        background-position: 0px;
+    }
+
+   100%{
+        background-position: $tamañofondo;
+    }
+    
+   
+
+
+}
+
+

@@ -2,9 +2,7 @@
 h1{
     margin:0;
 }
-.card-container{
-    perspective: 700;
-}
+
 
 .card{
     position: relative;
@@ -40,9 +38,10 @@ h1{
 }
 
 .back{
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
 
 .card:hover{
-    transform: rotateY(90deg);
-}
+    transform: rotateX(90deg);
+    transform-origin: 0 0;
+    }
