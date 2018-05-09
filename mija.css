@@ -38,7 +38,7 @@ h1{
 }
 
 .back{
-    transform: rotateX(180deg);
+    transform: rotateX(0deg);
 }
 
 .card:hover{
